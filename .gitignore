@@ -1,0 +1,17 @@
+# Devenv
+.devenv/
+.devenv.flake.nix
+
+# Direnv
+.direnv/
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
