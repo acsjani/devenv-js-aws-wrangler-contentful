@@ -8,7 +8,7 @@ in {
   env.GREET = "devenv";
 
   # https://devenv.sh/packages/
-  packages = [ pkgs-unstable.wrangler pkgs.awscli2 ];
+  packages = [ pkgs-unstable.wrangler pkgs.awscli2 pkgs.jq pkgs.zellij ];
 
   # https://devenv.sh/languages/
   languages.javascript = {
@@ -35,10 +35,16 @@ in {
     yarn --version
     echo "Wrangler version:"
     wrangler --version
+    echo "Zellij version:"
+    zellij --version
+    echo "jq version:"
+    jq --version
     echo "installing global npm packages..."
     yarn global add contentful-cli
     yarn global add opencode-ai@latest
     export PATH="$(yarn global bin):$PATH"
+    echo ""
+    echo "Tip: Run 'zellij --layout zellij-layout.kdl' to start with the project layout"
   '';
 
   # https://devenv.sh/tasks/
