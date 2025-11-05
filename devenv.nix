@@ -8,7 +8,7 @@ in {
   env.GREET = "devenv";
 
   # https://devenv.sh/packages/
-  packages = [ pkgs-unstable.wrangler pkgs.awscli2 pkgs.jq pkgs.zellij ];
+  packages = [ pkgs-unstable.wrangler pkgs.awscli2 pkgs.jq pkgs.zellij pkgs.lazygit ];
 
   # https://devenv.sh/languages/
   languages.javascript = {
@@ -39,6 +39,8 @@ in {
     zellij --version
     echo "jq version:"
     jq --version
+    echo "lazygit version:"
+    lazygit --version
     echo "installing global npm packages..."
     yarn global add contentful-cli
     yarn global add opencode-ai@latest
@@ -46,6 +48,7 @@ in {
     echo ""
     echo "Tip: Run 'zellij --layout devenv-shell/zellij-layout.kdl' from your project root"
     echo "     or 'zellij --layout zellij-layout.kdl' from this directory"
+    echo "     Run 'lazygit' for a beautiful git TUI"
   '';
 
   # https://devenv.sh/tasks/

@@ -12,6 +12,7 @@ This environment automatically sets up:
 - **AWS CLI v2**
 - **jq** (JSON processor)
 - **Zellij** (terminal multiplexer)
+- **lazygit** (beautiful git TUI)
 - **Starship** prompt
 - **Global npm packages**:
   - `contentful-cli`
@@ -108,9 +109,13 @@ If you set up direnv (see Prerequisites above), the environment loads automatica
 
 When the environment is active, you'll see:
 1. Set up all required tools
-2. Display version information for Node, Yarn, Wrangler, Zellij, and jq
+2. Display version information for Node, Yarn, Wrangler, Zellij, jq, and lazygit
 3. Install global npm packages automatically
 4. Configure your shell with Starship prompt
+
+## lazygit
+
+Run `lazygit` to launch an intuitive terminal UI for git operations. Perfect for staging, committing, branching, and resolving conflicts with keyboard-driven navigation.
 
 ## Zellij Layout
 
