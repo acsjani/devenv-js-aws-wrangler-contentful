@@ -1,0 +1,4 @@
+# Load devenv environment from the devenv-shell subdirectory
+# Copy this file to your project root as .envrc and run: direnv allow
+
+source_env devenv-shell

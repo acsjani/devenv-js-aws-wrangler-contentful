@@ -5,6 +5,9 @@
 # Direnv
 .direnv/
 
+# Project root .envrc (users should copy from .envrc.project-root)
+../.envrc
+
 # Editor
 .vscode/
 .idea/

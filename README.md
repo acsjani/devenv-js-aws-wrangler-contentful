@@ -69,23 +69,44 @@ eval "$(direnv hook zsh)"
 direnv hook fish | source
 ```
 
-Then create a `.envrc` file in this directory:
+#### Setup Option 1: Load from devenv-shell directory only
+
+If you only want the environment active when inside the `devenv-shell` directory:
+
 ```bash
-echo "use devenv" > .envrc
+cd devenv-shell
 direnv allow
 ```
 
-Now the environment will load automatically when you `cd` into this directory!
+The `.envrc` file is already configured in this directory.
+
+#### Setup Option 2: Load from project root (Recommended)
+
+To load the devenv environment from anywhere in your project, copy the provided `.envrc.project-root` file to your project root:
+
+```bash
+# From the project root directory
+cp devenv-shell/.envrc.project-root .envrc
+direnv allow
+```
+
+This uses `source_env` to load the devenv from the `devenv-shell` subdirectory, keeping your project root clean while making the environment available throughout your project tree.
 
 ## Usage
 
-Enter the development environment:
+### Manual Entry
+
+Enter the development environment manually:
 
 ```bash
 devenv shell
 ```
 
-This will:
+### Automatic with direnv (Recommended)
+
+If you set up direnv (see Prerequisites above), the environment loads automatically when you `cd` into the directory. No manual activation needed!
+
+When the environment is active, you'll see:
 1. Set up all required tools
 2. Display version information for Node, Yarn, Wrangler, Zellij, and jq
 3. Install global npm packages automatically
