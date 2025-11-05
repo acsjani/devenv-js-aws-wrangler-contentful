@@ -19,7 +19,63 @@ This environment automatically sets up:
 
 ## Prerequisites
 
-- Install [devenv](https://devenv.sh/getting-started/)
+### Install devenv
+
+**macOS/Linux:**
+```bash
+curl -fsSL https://get.devenv.sh | sh
+```
+
+**NixOS:**
+```bash
+nix-env -iA nixos.devenv
+```
+
+For other installation methods, see [devenv.sh/getting-started](https://devenv.sh/getting-started/)
+
+### Install direnv (Optional but Recommended)
+
+direnv automatically loads the devenv environment when you enter the directory.
+
+**macOS:**
+```bash
+brew install direnv
+```
+
+**Ubuntu/Debian:**
+```bash
+apt install direnv
+```
+
+**Other Linux:**
+```bash
+nix-env -i direnv
+```
+
+After installation, add the following to your shell configuration:
+
+**For bash** (`~/.bashrc`):
+```bash
+eval "$(direnv hook bash)"
+```
+
+**For zsh** (`~/.zshrc`):
+```bash
+eval "$(direnv hook zsh)"
+```
+
+**For fish** (`~/.config/fish/config.fish`):
+```fish
+direnv hook fish | source
+```
+
+Then create a `.envrc` file in this directory:
+```bash
+echo "use devenv" > .envrc
+direnv allow
+```
+
+Now the environment will load automatically when you `cd` into this directory!
 
 ## Usage
 
@@ -37,8 +93,14 @@ This will:
 
 ## Zellij Layout
 
-A preconfigured Zellij layout is provided for optimal workflow:
+A preconfigured Zellij layout is provided for optimal workflow.
 
+**From the project root directory:**
+```bash
+zellij --layout devenv-shell/zellij-layout.kdl
+```
+
+**From within this devenv-shell directory:**
 ```bash
 zellij --layout zellij-layout.kdl
 ```

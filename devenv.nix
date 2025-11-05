@@ -44,7 +44,8 @@ in {
     yarn global add opencode-ai@latest
     export PATH="$(yarn global bin):$PATH"
     echo ""
-    echo "Tip: Run 'zellij --layout zellij-layout.kdl' to start with the project layout"
+    echo "Tip: Run 'zellij --layout devenv-shell/zellij-layout.kdl' from your project root"
+    echo "     or 'zellij --layout zellij-layout.kdl' from this directory"
   '';
 
   # https://devenv.sh/tasks/
