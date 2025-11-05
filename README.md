@@ -86,7 +86,7 @@ To load the devenv environment from anywhere in your project, copy the provided 
 
 ```bash
 # From the project root directory
-cp devenv-shell/.envrc.project-root .envrc
+cp ../devenv-shell/.envrc.project-root .envrc
 direnv allow
 ```
 
@@ -118,7 +118,7 @@ A preconfigured Zellij layout is provided for optimal workflow.
 
 **From the project root directory:**
 ```bash
-zellij --layout devenv-shell/zellij-layout.kdl
+zellij --layout ../devenv-shell/zellij-layout.kdl
 ```
 
 **From within this devenv-shell directory:**
@@ -157,4 +157,12 @@ devenv test
 
 ## License
 
-[Add your license here]
+MIT (Maybe It'll Terminate) License
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this devenv configuration, to deal in the Configuration without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Configuration, and to permit persons to whom the Configuration is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Configuration.
+
+THE CONFIGURATION IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE CONFIGURATION OR THE USE OR OTHER DEALINGS IN THE CONFIGURATION.
+
+**TL;DR:** Use at your own risk. If this breaks your computer, summons a daemon (the Unix kind or otherwise), or causes your npm packages to achieve sentience, that's on you. We take no responsibility for any Nix builds that take longer than the heat death of the universe.
