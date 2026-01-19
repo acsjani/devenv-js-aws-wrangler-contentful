@@ -1,0 +1,80 @@
+# Minimal DevEnv Prompt - Omarchy-inspired
+# Only what you need: devenv indicator, directory, git, node
+format = "📦 $directory$git_branch$git_status$nodejs $character"
+palette = "base16"
+
+[character]
+disabled = false
+error_symbol = "[✗](bold red)"
+success_symbol = "[❯](bold cyan)"
+
+[directory]
+format = "[$path]($style) "
+style = "bold cyan"
+truncation_length = 3
+truncation_symbol = "…/"
+truncate_to_repo = false
+
+[git_branch]
+format = "[$symbol$branch]($style) "
+style = "bold green"
+symbol = ""
+
+[git_status]
+format = "[$all_status$ahead_behind]($style) "
+style = "bold yellow"
+conflicted = "="
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+up_to_date = ""
+untracked = "?"
+stashed = "$"
+modified = "!"
+staged = "+"
+renamed = "»"
+deleted = "✘"
+
+[nodejs]
+format = "[$symbol$version]($style) "
+style = "bold blue"
+symbol = "⬢ "
+
+[palettes.base16]
+base00 = "#1e1e2e"
+base01 = "#181825"
+base02 = "#313244"
+base03 = "#45475a"
+base04 = "#585b70"
+base05 = "#cdd6f4"
+base06 = "#f5e0dc"
+base07 = "#b4befe"
+base08 = "#f38ba8"
+base09 = "#fab387"
+base0A = "#f9e2af"
+base0B = "#a6e3a1"
+base0C = "#94e2d5"
+base0D = "#89b4fa"
+base0E = "#cba6f7"
+base0F = "#f2cdcd"
+black = "#1e1e2e"
+blue = "#89b4fa"
+bright-black = "#45475a"
+bright-blue = "#89b4fa"
+bright-cyan = "#94e2d5"
+bright-green = "#a6e3a1"
+bright-magenta = "#cba6f7"
+bright-purple = "#cba6f7"
+bright-red = "#f38ba8"
+bright-white = "#b4befe"
+bright-yellow = "#f9e2af"
+brown = "#f2cdcd"
+cyan = "#94e2d5"
+green = "#a6e3a1"
+magenta = "#cba6f7"
+orange = "#fab387"
+purple = "#cba6f7"
+red = "#f38ba8"
+white = "#cdd6f4"
+yellow = "#f9e2af"
+

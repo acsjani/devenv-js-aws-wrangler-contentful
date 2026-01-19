@@ -6,9 +6,17 @@ let
 in {
   # https://devenv.sh/basics/
   env.GREET = "devenv";
+  env.LOCALE_ARCHIVE = "${pkgs.glibcLocales}/lib/locale/locale-archive";
+  env.BASH_COMPLETION_VERSINFO = "loaded";
 
   # https://devenv.sh/packages/
-  packages = [ pkgs-unstable.wrangler pkgs.awscli2 pkgs.jq pkgs.zellij pkgs.lazygit ];
+  packages = [
+    pkgs-unstable.wrangler
+    pkgs.awscli2
+    pkgs.jq
+    pkgs.lazygit
+    pkgs.bashInteractive
+  ];
 
   # https://devenv.sh/languages/
   languages.javascript = {
@@ -17,10 +25,16 @@ in {
       enable = true;
       package = pkgs.yarn;
     };
-    package = pkgs.nodejs_20;
+    package = pkgs.nodejs_24;
   };
 
-  starship.enable = true;
+  starship = {
+    enable = true;
+    config = {
+      enable = true;
+      path = ./starship.toml;
+    };
+  };
 
   # https://devenv.sh/scripts/
   scripts.hello.exec = ''
@@ -28,6 +42,9 @@ in {
   '';
 
   enterShell = ''
+    # Prevent system bash_completion from running
+    export BASH_COMPLETION_VERSINFO="loaded"
+
     hello
     echo "Node version:"
     node --version
@@ -36,7 +53,6 @@ in {
     echo "Wrangler version:"
     wrangler --version
     echo "Zellij version:"
-    zellij --version
     echo "jq version:"
     jq --version
     echo "lazygit version:"
